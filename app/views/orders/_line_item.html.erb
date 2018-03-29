@@ -1,7 +1,16 @@
 <% @order.line_items.each do |line_item| %>
-   <li><%= line_item.product.name %></li>
-   <%= image_tag line_item.product.image.thumb %>
-   <li> <%= line_item.product.description %></li>
-   <li> Quantity: <%= line_item.quantity %></li>
-   <li>Total: $<%= line_item.total_price_cents / 100 %></li>
+  <tr>
+    <th>Product</th>
+    <th> Name </th>
+    <th>Description</th>
+    <th> Quantity </th>
+    <th> Total Cost </th>
+  </tr>
+  <tr>
+    <td class="product-image"> <%= image_tag line_item.product.image.thumb %></td>
+    <td><%= line_item.product.name %></td>
+    <td class = "description"> <%= line_item.product.description %></td>
+    <td> <%= line_item.quantity %></td>
+    <td>$<%= line_item.total_price_cents / 100 %></td>
+  </tr>
 <% end %>

@@ -5,6 +5,7 @@
   </header>
 
   <div class="panel panel-default items">
+     <% if cart.present? %>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -48,6 +49,11 @@
         </script>
       <% end %>
     </div>
+    <% else %>
+    <div class ="empty-cart">
+    <img src="https://www.dvngroup.org/images/cart-empty.png">
+    <h4> Looks like your cart is empty. Click <%= link_to 'here', root_path %> to add items to your cart.</h4>
+    <% end %>
   </div>
 
 </section>

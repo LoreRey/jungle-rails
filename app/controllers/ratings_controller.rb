@@ -1,5 +1,7 @@
 class RatingsController < ApplicationController
 
+  before_filter :authorize
+
   def create
     # raise "Im here"
 
@@ -12,6 +14,13 @@ class RatingsController < ApplicationController
     else
       redirect_to :back
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:product_id])
+    @rating = @product.ratings.find(params[:id])
+    @rating.destroy
+    redirect_to product_path(@product)
   end
 
   private

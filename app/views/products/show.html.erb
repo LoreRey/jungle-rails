@@ -41,15 +41,17 @@
   <% if current_user %>
   <div class="add-review">
     <h3>Add a Review</h3>
+    <div class="form">
     <%= form_for([@product, @rating]) do |f| %>
-      <%= f.label :rating %> <br />
+      <%= f.label :rating %> ⭐️ <br />
       <%= f.select :rating, ['1', '2', '3', '4', '5']%> <br />
       <br>
-      <%= f.label :description, 'Review' %> <br />
+      <%= f.label :description, 'Review' %> ✏️ <br />
       <%= f.text_field :description %> <br />
       <br>
       <%= f.submit "Add Review" %>
     <% end %>
+  </div>
   </div>
   <% end %>
 

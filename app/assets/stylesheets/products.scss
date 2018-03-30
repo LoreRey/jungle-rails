@@ -86,3 +86,53 @@ main section.products-show {
 }
 
 
+  div.add-review {
+    width: 100%;
+    padding: 8px;
+    border-top: 2px solid grey;
+    margin-top: 16px;
+  }
+
+  h3 {
+    text-align: center;
+    color: blue;
+  }
+
+  .form {
+    text-align: center
+  }
+
+  #rating_description {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .commit {
+    font: webkit-control;
+  }
+
+  main section.orders-show {
+
+  div.order-summary.jumbotron {
+    padding: 50px;
+  }
+
+  td.product-image {
+    padding-right: 20px;
+  }
+
+  td.description, th, td {
+    padding-left: 25px;
+  }
+
+  span.total {
+    color: blue;
+      font-size: x-large;
+      font-family: sans-serif;
+      padding: 20px;
+  }
+
+}
+

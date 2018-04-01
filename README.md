@@ -4,13 +4,13 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ## Final Product
 
-!["home"](#)
+!["home"](https://github.com/LoreRey/jungle-rails/blob/master/app/assets/images/Home.png?raw=true)
 
-!["Cart"](#)
+!["Cart"](https://github.com/LoreRey/jungle-rails/blob/master/app/assets/images/cart.png?raw=true)
 
-!["Reviews"](#)
+!["Reviews"](https://github.com/LoreRey/jungle-rails/blob/master/app/assets/images/reviews.png?raw=true)
 
-!["checkout summary"](#)
+!["checkout summary"](#https://github.com/LoreRey/jungle-rails/blob/master/app/assets/images/checkout_summary.png?raw=true)
 
 
 ## Setup

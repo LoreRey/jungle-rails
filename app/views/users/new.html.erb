@@ -2,11 +2,16 @@
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  First Name: <%= f.text_field :first_name %>
-  Last Name: <%= f.text_field :last_name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  First Name: <br><%= f.text_field :first_name %> <br/>
+  <br>
+  Last Name: <br><%= f.text_field :last_name %> <br/>
+  <br>
+  Email: <br><%= f.text_field :email %> <br/>
+  <br>
+  Password: <br><%= f.password_field :password %> <br />
+  <br>
+  Password Confirmation: <br><%= f.password_field :password_confirmation %><br/>
+  <br>
   <%= f.submit "Submit" %>
 
 <% end %>

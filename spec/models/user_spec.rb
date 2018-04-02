@@ -48,7 +48,34 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    # examples for this class method here
+
+    # before :each do
+    # @user = new
+    # @user.save
+
+    # result = User.authenticate_with_credentials('lorena@gmail.com', 'test')
+    # expect(@result.class).to eq @user
+
+    it 'authenticates a user with correct credentials' do
+      @user = User.create(first_name: 'lorena', last_name: 'Reyes', email: 'lorena@gmail.com', password: 'test', password_confirmation: 'test')
+      expect(User.authenticate_with_credentials('lorena@gmail.com', 'test')).to eq @user
+    end
+
+    it 'not authenticates a user with incorrect credentials' do
+      @user = User.create(first_name: 'Lorena', last_name: 'Reyes', email: 'lorena@gmail.com', password: 'test', password_confirmation: 'test')
+      expect(User.authenticate_with_credentials('lorena@hotmail.com', 'trst')).to_not eq @user
+    end
+
+    it "authenticates user with whitespace before email" do
+      @user = User.create(first_name: 'Lorena', last_name: 'Reyes', email: 'lorena@gmail.com', password: 'test', password_confirmation: 'test')
+      expect(User.authenticate_with_credentials(' lorena@hotmail.com', 'test')).to_not eq @user
+    end
+
+    it "authenticates user with wrong case in email" do
+      @user = User.create(first_name: 'Lorena', last_name: 'Reyes', email: 'lorena@gmail.com', password: 'test', password_confirmation: 'test')
+      expect(User.authenticate_with_credentials('LorEnA@HOTMAIL.com', 'test')).to_not eq @user
+    end
+
   end
 
 end

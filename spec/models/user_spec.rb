@@ -16,7 +16,12 @@ RSpec.describe User, type: :model do
 
     it "must be created with password and password confirmation" do
       @user = User.create(first_name: 'Lorena', last_name: 'Reyes', email: 'lorena@gmail.com', password: nil, password_confirmation: nil)
-      expect(@user.errors.full_messages()).to eq ["Password can't be blank"]
+      expect(@user.errors.full_messages()).to include("Password can't be blank")
+    end
+
+    it "must not be created with a password with less than the minimum length" do
+      @user = User.create(first_name: 'Lorena', last_name: 'Reyes', email: 'lorena@gmail.com', password: 'hey', password_confirmation: 'hey')
+      expect(@user.errors.full_messages()).to include("Password is too short (minimum is 4 characters)", "Password confirmation is too short (minimum is 4 characters)")
     end
 
     it "must be created with unique email" do
@@ -30,12 +35,10 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages()).to eq ["First name can't be blank"]
     end
 
-
     it "must be created with a last name" do
       @user = User.create(first_name: 'Lorena', last_name: nil, email: 'lorena@gmail.com', password: 'test', password_confirmation: 'test')
       expect(@user.errors.full_messages()).to eq ["Last name can't be blank"]
     end
-
 
     it "must be created with an email" do
       @user = User.create(first_name: 'Lorena', last_name: 'Reyes', email: nil, password: 'test', password_confirmation: 'test')
